@@ -7,12 +7,25 @@ using namespace std;
 
 class Node{
     public:
-        int info ;
+        int data;
         Node * next;
 
-        Node(){}
-        Node(int d) : info(d), next(NULL){};
-        Node(int d, Node * next) : info(d), next(next){};
+       Node()
+    {
+        data = 0;
+        next = NULL;
+    }
+  
+    Node(int data)
+    {
+        this->data = data;
+        this->next = NULL;
+    }
+
+    Node(int data, Node *next){
+        this -> data = data;
+        this -> next = next;
+    }
      
 };
 
@@ -22,14 +35,18 @@ class LinkedList {
         Node* TAIL;
 
     public:
-        LinkedList(){}
-        void print(char);
+        LinkedList(){this->HEAD = NULL;
+        this->TAIL = NULL;
+        }
+        void traverse(char);
         void addToHead (int);
         void add(Node *pred , int);
-        void addToTail();
-        void removenode();
+        void addToTail(int);
+        void removenode(int);
         void removefromhead();
-        void removefromtail();
+        bool search(int);
+        Node *retrieve(int);
+        bool isEmpty();
 };
 
 
